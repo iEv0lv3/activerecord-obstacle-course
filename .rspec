@@ -1,2 +1,9 @@
 --require spec_helper
 --format=documentation
+
+config.backtrace_exclusion_patterns = [
+      /\/lib\d*\/ruby\//,
+      /org\/jruby\//,
+      /bin\//,
+      /lib\/rspec\/(core|expectations|matchers|mocks)/
+  ]

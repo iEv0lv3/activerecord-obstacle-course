@@ -14,7 +14,7 @@ The remaining portions of the obstacle course will increase in difficulty and wi
 1. Fork [the repo](https://github.com/turingschool-projects/activerecord-obstacle-course) to your own GitHub account, then clone down your fork.
 
 2. Do the usual setup for a Rails app:
-
+s
 ```bash
 bundle install
 bundle update
