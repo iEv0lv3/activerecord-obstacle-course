@@ -131,7 +131,11 @@ describe 'ActiveRecord Obstacle Course, Week 5' do
     # how will you turn this into the proper ActiveRecord commands?
 
     # ------------------ ActiveRecord Solution ----------------------
-    data = []
+    data = User.select('users.name AS user_name, orders.id AS order_id, (orders.amount / count(order_items.id)) AS avg_item_cost')
+               .joins(:order_items)
+               .where('order_items.order_id = orders.id AND orders.user_id = users.id')
+               .group('users.name, orders.id')
+               .order('users.name DESC, avg_item_cost ASC')
     # ---------------------------------------------------------------
 
     expect([data[0].user_name,data[0].order_id,data[0].avg_item_cost]).to eq([@user_1.name, @order_1.id, 50])
